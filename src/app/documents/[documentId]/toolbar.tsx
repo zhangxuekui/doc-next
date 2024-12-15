@@ -29,31 +29,33 @@ export const ToolBar = () => {
         icon: LucideIcon;
         onClick: () => void;
         isActive?: boolean
-    }[][] = [[
-        {
-            label: "Undo",
-            icon: Undo2Icon,
-            onClick: () => editor?.chain().focus().undo().run(),
-        },
-        {
-            label: "Redo",
-            icon: Redo2Icon,
-            onClick: () => editor?.chain().focus().redo().run(),
-        },
-        {
-            label: "Print",
-            icon: PrinterIcon,
-            onClick: () => window.print(),
-        },
-        {
-            label: "Spell Check",
-            icon: SpellCheckIcon,
-            onClick: () => {
-                const current = editor?.view.dom.getAttribute("spellcheck");
-                editor?.view.dom.setAttribute("spellcheck", current === "false" ? "true" : "false");
-            },
-        }
-    ]];
+    }[][] = [
+            [
+                {
+                    label: "Undo",
+                    icon: Undo2Icon,
+                    onClick: () => editor?.chain().focus().undo().run(),
+                },
+                {
+                    label: "Redo",
+                    icon: Redo2Icon,
+                    onClick: () => editor?.chain().focus().redo().run(),
+                },
+                {
+                    label: "Print",
+                    icon: PrinterIcon,
+                    onClick: () => window.print(),
+                },
+                {
+                    label: "Spell Check",
+                    icon: SpellCheckIcon,
+                    onClick: () => {
+                        const current = editor?.view.dom.getAttribute("spellcheck");
+                        editor?.view.dom.setAttribute("spellcheck", current === "false" ? "true" : "false");
+                    },
+                }
+            ],
+        ];
     return (
         <div className="bg-[#F1F4F9] px-2.5 py-0.5 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto">
             {sections[0].map((item) => (
