@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useEditorStore } from "@/store/use-editor-store";
-import { LucideIcon, Undo2Icon } from "lucide-react"
+import { LucideIcon, PrinterIcon, Redo2Icon, Undo2Icon } from "lucide-react"
 
 interface ToolBarButtonProps {
     onClick?: () => void;
@@ -34,6 +34,16 @@ export const ToolBar = () => {
             label: "Undo",
             icon: Undo2Icon,
             onClick: () => editor?.chain().focus().undo().run(),
+        },
+        {
+            label:"Redo",
+            icon:Redo2Icon,
+            onClick:() => editor?.chain().focus().redo().run(),
+        },
+        {
+            label:"Print",
+            icon:PrinterIcon,
+            onClick:() => ()=>window.print(),
         }
     ]];
     return (
