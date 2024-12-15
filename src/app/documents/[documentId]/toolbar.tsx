@@ -36,14 +36,14 @@ export const ToolBar = () => {
             onClick: () => editor?.chain().focus().undo().run(),
         },
         {
-            label:"Redo",
-            icon:Redo2Icon,
-            onClick:() => editor?.chain().focus().redo().run(),
+            label: "Redo",
+            icon: Redo2Icon,
+            onClick: () => editor?.chain().focus().redo().run(),
         },
         {
-            label:"Print",
-            icon:PrinterIcon,
-            onClick:() => ()=>window.print(),
+            label: "Print",
+            icon: PrinterIcon,
+            onClick: () => window.print(),
         }
     ]];
     return (
