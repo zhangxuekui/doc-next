@@ -183,8 +183,8 @@ body {
     }
   }
 
-   /* Table-specific styling */
-   table {
+  /* Table-specific styling */
+  table {
     border-collapse: collapse;
     margin: 0;
     overflow: hidden;
@@ -200,7 +200,7 @@ body {
       position: relative;
       vertical-align: top;
 
-      > * {
+      >* {
         margin-bottom: 0;
       }
     }
@@ -214,7 +214,10 @@ body {
     .selectedCell:after {
       background: var(#959596);
       content: "";
-      left: 0; right: 0; top: 0; bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
       pointer-events: none;
       position: absolute;
       z-index: 2;
@@ -240,7 +243,8 @@ body {
     cursor: ew-resize;
     cursor: col-resize;
   }
-/* image special styling*/
+
+  /* image special styling*/
   img {
     display: block;
     height: auto;
@@ -249,6 +253,16 @@ body {
 
     &.ProseMirror-selectednode {
       outline: 3px solid var(--primary);
+    }
+  }
+
+  /* Link styles */
+  a {
+    @apply text-blue-600;
+    cursor: pointer;
+
+    &:hover {
+      @apply underline;
     }
   }
 }
