@@ -21,13 +21,13 @@ const ListButton = () => {
             label: "Bullet list",
             icon: ListIcon,
             isActive: () => editor?.isActive("bulletList"),
-            onClick: editor?.chain().focus().toggleBulletList().run()
+            onClick: () => editor?.chain().focus().toggleBulletList().run(),
         },
         {
             label: "Ordered list",
             icon: ListOrderedIcon,
             isActive: () => editor?.isActive("orderedList"),
-            onClick: () => editor?.chain().focus().toggleOrderedList().run()
+            onClick: () => editor?.chain().focus().toggleOrderedList().run(),
         }
     ]
     return (
@@ -75,7 +75,6 @@ const AlignButton = () => {
             value: "right",
             icon: AlignRightIcon
         },
-        ,
         {
             label: "Align justify",
             value: "justify",
