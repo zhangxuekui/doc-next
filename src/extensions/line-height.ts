@@ -57,9 +57,22 @@ export const LineHeightExtension = Extension.create({
                 if (dispatch) dispatch(tr)
                 return true;
             },
-            unsetLineHeight:()=>({tr,state,dispatch})=>{
-                const {selection} = state;
+            unsetLineHeight: () => ({ tr, state, dispatch }) => {
+                const { selection } = state;
                 tr = tr.setSelection(selection);
+                const { from, to } = selection;
+
+                state.doc.nodesBetween(from, to, (node, pos) => {
+                    if (this.options.types.includes(node.type.name)) {
+                        ty = tr.setNodeMarkup(pos, undefined, {
+                            ...node.attrs,
+                            lineHeight: this.options.defaultLineHeight
+                        })
+                    }
+                })
+
+                if (dispatch) dispatch(tr);
+                return true;
             }
         }
     },
