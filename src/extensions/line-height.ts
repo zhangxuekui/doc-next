@@ -64,7 +64,7 @@ export const LineHeightExtension = Extension.create({
 
                 state.doc.nodesBetween(from, to, (node, pos) => {
                     if (this.options.types.includes(node.type.name)) {
-                        ty = tr.setNodeMarkup(pos, undefined, {
+                        tr = tr.setNodeMarkup(pos, undefined, {
                             ...node.attrs,
                             lineHeight: this.options.defaultLineHeight
                         })
