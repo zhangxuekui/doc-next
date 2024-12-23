@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DocumentInput } from "./document-input";
-import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import { MenubarItem } from "@radix-ui/react-menubar";
+import { Menubar, MenubarContent, MenubarMenu, MenubarSub, MenubarTrigger } from "@/components/ui/menubar";
 import { FileIcon } from "lucide-react";
 
 
@@ -18,14 +17,29 @@ export const Navbar = () => {
                     <div className="flex" >
                         <Menubar className="border-none bg-transparent shadow-none h-auto p-0">
                             <MenubarMenu>
-                                <MenubarTrigger>
+                                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] rounded-sm hover:bg-muted h-auto">
                                     File
                                 </MenubarTrigger>
-                                <MenubarContent>
-                                    <MenubarItem>
+                                <MenubarContent className="print:hidden">
+                                    <MenubarSub>
                                         <FileIcon className="size-4 mr-2" />Save
-                                    </MenubarItem>
+                                    </MenubarSub>
                                 </MenubarContent>
+                            </MenubarMenu>
+                            <MenubarMenu>
+                                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] rounded-sm hover:bg-muted h-auto">
+                                    Edit
+                                </MenubarTrigger>
+                            </MenubarMenu>
+                            <MenubarMenu>
+                                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] rounded-sm hover:bg-muted h-auto">
+                                    Insert
+                                </MenubarTrigger>
+                            </MenubarMenu>
+                            <MenubarMenu>
+                                <MenubarTrigger className="text-sm font-normal py-0.5 px-[7px] rounded-sm hover:bg-muted h-auto">
+                                    Format
+                                </MenubarTrigger>
                             </MenubarMenu>
                         </Menubar>
                     </div>
