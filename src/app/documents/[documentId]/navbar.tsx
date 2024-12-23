@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DocumentInput } from "./document-input";
-import { Menubar, MenubarContent, MenubarMenu, MenubarSub, MenubarTrigger } from "@/components/ui/menubar";
-import { FileIcon } from "lucide-react";
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/ui/menubar";
+import { FileIcon, FileJsonIcon } from "lucide-react";
 
 
 export const Navbar = () => {
@@ -22,7 +22,14 @@ export const Navbar = () => {
                                 </MenubarTrigger>
                                 <MenubarContent className="print:hidden">
                                     <MenubarSub>
-                                        <FileIcon className="size-4 mr-2" />Save
+                                        <MenubarSubTrigger>
+                                            <FileIcon className="size-4 mr-2" />Save
+                                        </MenubarSubTrigger>
+                                        <MenubarSubContent>
+                                            <MenubarItem>
+                                                <FileJsonIcon className="size-4 mr-2" />Save as JSON
+                                            </MenubarItem>
+                                        </MenubarSubContent>
                                     </MenubarSub>
                                 </MenubarContent>
                             </MenubarMenu>
