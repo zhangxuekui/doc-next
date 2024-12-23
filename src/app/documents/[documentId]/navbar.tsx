@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { DocumentInput } from "./document-input";
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger,MenubarSeparator } from "@/components/ui/menubar";
-import { FileIcon, FileJsonIcon, FilePlusIcon, FileTextIcon, GlobeIcon ,FilePenIcon,TrashIcon} from "lucide-react";
+import { FileIcon, FileJsonIcon, FilePlusIcon, FileTextIcon, GlobeIcon ,FilePenIcon,TrashIcon,PrinterIcon} from "lucide-react";
 import { BsFilePdf } from "react-icons/bs";
 
 
@@ -52,6 +52,9 @@ export const Navbar = () => {
                                         <TrashIcon className="size-4 mr-2" />Remove
                                     </MenubarItem>
                                     <MenubarSeparator />
+                                    <MenubarItem>
+                                        <PrinterIcon className="size-4 mr-2" />Print
+                                    </MenubarItem>
                                 </MenubarContent>
                             </MenubarMenu>
                             <MenubarMenu>
