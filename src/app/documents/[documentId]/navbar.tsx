@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DocumentInput } from "./document-input";
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/ui/menubar";
-import { FileIcon, FileJsonIcon } from "lucide-react";
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger,MenubarSeparator } from "@/components/ui/menubar";
+import { FileIcon, FileJsonIcon, FilePlusIcon, FileTextIcon, GlobeIcon ,FilePenIcon,TrashIcon} from "lucide-react";
+import { BsFilePdf } from "react-icons/bs";
 
 
 export const Navbar = () => {
@@ -27,10 +28,30 @@ export const Navbar = () => {
                                         </MenubarSubTrigger>
                                         <MenubarSubContent>
                                             <MenubarItem>
-                                                <FileJsonIcon className="size-4 mr-2" />Save as JSON
+                                                <FileJsonIcon className="size-4 mr-2" />JSON
+                                            </MenubarItem>
+                                            <MenubarItem>
+                                                <GlobeIcon className="size-4 mr-2" />HTML
+                                            </MenubarItem>
+                                            <MenubarItem>
+                                                <BsFilePdf className="size-4 mr-2" />PDF
+                                            </MenubarItem>
+                                            <MenubarItem>
+                                                <FileTextIcon className="size-4 mr-2" />Text
                                             </MenubarItem>
                                         </MenubarSubContent>
                                     </MenubarSub>
+                                    <MenubarItem>
+                                        <FilePlusIcon className="size-4 mr-2" />New Document
+                                    </MenubarItem>
+                                    <MenubarSeparator />
+                                    <MenubarItem>
+                                        <FilePenIcon className="size-4 mr-2" />Rename
+                                    </MenubarItem>
+                                    <MenubarItem>
+                                        <TrashIcon className="size-4 mr-2" />Remove
+                                    </MenubarItem>
+                                    <MenubarSeparator />
                                 </MenubarContent>
                             </MenubarMenu>
                             <MenubarMenu>
